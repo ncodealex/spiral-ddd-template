@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MessDetectorOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCSFixerOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCodeSnifferOptionsConfiguration">
+    <option name="highlightLevel" value="WARNING" />
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/my-app/vendor/composer" />
+      <path value="$PROJECT_DIR$/my-app/vendor/psr/http-server-handler" />
+      <path value="$PROJECT_DIR$/my-app/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/my-app/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/my-app/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/my-app/vendor/psr/http-server-middleware" />
+      <path value="$PROJECT_DIR$/my-app/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/my-app/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/my-app/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/my-app/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/my-app/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/my-app/vendor/grpc/grpc" />
+      <path value="$PROJECT_DIR$/my-app/vendor/clue/stream-filter" />
+      <path value="$PROJECT_DIR$/my-app/vendor/cebe/markdown" />
+      <path value="$PROJECT_DIR$/my-app/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/my-app/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/my-app/vendor/amphp/amp" />
+      <path value="$PROJECT_DIR$/my-app/vendor/amphp/byte-stream" />
+      <path value="$PROJECT_DIR$/my-app/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/my-app/vendor/cycle/migrations" />
+      <path value="$PROJECT_DIR$/my-app/vendor/cycle/database" />
+      <path value="$PROJECT_DIR$/my-app/vendor/cycle/annotated" />
+      <path value="$PROJECT_DIR$/my-app/vendor/cocur/slugify" />
+      <path value="$PROJECT_DIR$/my-app/vendor/cycle/schema-migrations-generator" />
+      <path value="$PROJECT_DIR$/my-app/vendor/cycle/schema-builder" />
+      <path value="$PROJECT_DIR$/my-app/vendor/cycle/orm" />
+      <path value="$PROJECT_DIR$/my-app/vendor/cycle/schema-renderer" />
+      <path value="$PROJECT_DIR$/my-app/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/my-app/vendor/nette/utils" />
+      <path value="$PROJECT_DIR$/my-app/vendor/nette/php-generator" />
+      <path value="$PROJECT_DIR$/my-app/vendor/fidry/cpu-core-counter" />
+      <path value="$PROJECT_DIR$/my-app/vendor/google/common-protos" />
+      <path value="$PROJECT_DIR$/my-app/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/my-app/vendor/vimeo/psalm" />
+      <path value="$PROJECT_DIR$/my-app/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/my-app/vendor/league/flysystem-local" />
+      <path value="$PROJECT_DIR$/my-app/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/my-app/vendor/jean85/pretty-package-versions" />
+      <path value="$PROJECT_DIR$/my-app/vendor/google/protobuf" />
+      <path value="$PROJECT_DIR$/my-app/vendor/nyholm/psr7-server" />
+      <path value="$PROJECT_DIR$/my-app/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/my-app/vendor/league/event" />
+      <path value="$PROJECT_DIR$/my-app/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/my-app/vendor/sentry/sentry" />
+      <path value="$PROJECT_DIR$/my-app/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/my-app/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/my-app/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/roadrunner-jobs" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/roadrunner-bridge" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/composer-publish-plugin" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spatie/array-to-xml" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/roadrunner-http" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/roadrunner-kv" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/framework" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/roadrunner-metrics" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/temporal-bridge" />
+      <path value="$PROJECT_DIR$/my-app/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/nyholm-bridge" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/sentry-bridge" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/cycle-bridge" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/attributes" />
+      <path value="$PROJECT_DIR$/my-app/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/testing" />
+      <path value="$PROJECT_DIR$/my-app/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/twig-bridge" />
+      <path value="$PROJECT_DIR$/my-app/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/roadrunner-cli" />
+      <path value="$PROJECT_DIR$/my-app/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/data-grid-bridge" />
+      <path value="$PROJECT_DIR$/my-app/vendor/php-http/discovery" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/sapi-bridge" />
+      <path value="$PROJECT_DIR$/my-app/vendor/php-http/curl-client" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/roadrunner-worker" />
+      <path value="$PROJECT_DIR$/my-app/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/roadrunner-tcp" />
+      <path value="$PROJECT_DIR$/my-app/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/goridge" />
+      <path value="$PROJECT_DIR$/my-app/vendor/temporal/sdk" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/data-grid" />
+      <path value="$PROJECT_DIR$/my-app/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/dumper" />
+      <path value="$PROJECT_DIR$/my-app/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral/roadrunner-grpc" />
+      <path value="$PROJECT_DIR$/my-app/vendor/php-http/message" />
+      <path value="$PROJECT_DIR$/my-app/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/my-app/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/my-app/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/my-app/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/my-app/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/my-app/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/my-app/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/my-app/vendor/carbonphp/carbon-doctrine-types" />
+      <path value="$PROJECT_DIR$/my-app/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/my-app/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/my-app/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/my-app/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/my-app/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/my-app/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/my-app/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/my-app/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/my-app/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/my-app/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/my-app/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/my-app/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/my-app/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/my-app/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/my-app/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/my-app/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/my-app/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/my-app/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/my-app/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/my-app/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/my-app/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/my-app/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/my-app/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/my-app/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/my-app/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/my-app/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/my-app/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/my-app/vendor/buggregator/trap" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/my-app/vendor/nunomaduro/termwind" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/my-app/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/my-app/vendor/butschster/cron-expression-generator" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/my-app/vendor/felixfbecker/advanced-json-rpc" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/my-app/vendor/felixfbecker/language-server-protocol" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/my-app/vendor/netresearch/jsonmapper" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/my-app/vendor/codedungeon/php-cli-colors" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/my-app/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/my-app/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/my-app/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/my-app/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/my-app/vendor/roadrunner-php/app-logger" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/my-app/vendor/roadrunner-php/centrifugo" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/my-app/vendor/roadrunner-php/roadrunner-api-dto" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/my-app/vendor/roadrunner-php/lock" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral-packages/symfony-validator" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral-packages/yii-error-handler-bridge" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/my-app/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/my-app/vendor/roadrunner-php/version-checker" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral-packages/league-event" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/my-app/vendor/spiral-packages/scheduler" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/my-app/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/my-app/vendor/yiisoft/friendly-exception" />
+      <path value="$PROJECT_DIR$/my-app/vendor/yiisoft/http" />
+      <path value="$PROJECT_DIR$/my-app/vendor/yiisoft/strings" />
+      <path value="$PROJECT_DIR$/my-app/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/my-app/vendor/alexkart/curl-builder" />
+      <path value="$PROJECT_DIR$/my-app/vendor/yiisoft/injector" />
+      <path value="$PROJECT_DIR$/my-app/vendor/yiisoft/error-handler" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
+  <component name="PhpStanOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="Psalm">
+    <Psalm_settings>
+      <PsalmConfiguration tool_path="$PROJECT_DIR$/my-app/vendor/bin/psalm" />
+    </Psalm_settings>
+  </component>
+  <component name="PsalmOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+</project>

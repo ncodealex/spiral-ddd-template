@@ -1,0 +1,178 @@
+# replace  with your project name
+version: '3.7'
+name: spiral-template
+
+services:
+    reverse-proxy:
+        container_name: spiral-template-reverse-proxy
+        image: traefik:v2.9
+        command:
+            - "--accesslog"
+            - "--api.insecure=true"
+            - "--providers.docker=true"
+            - "--providers.docker.exposedbydefault=false"
+            - "--entrypoints.web.address=:80"
+            - "--entrypoints.websecure.address=:443"
+            - "--providers.file.directory=/configuration/"
+            - "--providers.file.watch=true"
+        ports:
+            - 80:80
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.reverse-proxy.entrypoints=web"
+            - "traefik.http.routers.reverse-proxy.rule=Host(`traefik.spiral-template.localhost`)"
+            - "traefik.http.services.reverse-proxy.loadbalancer.server.port=8080"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        restart: unless-stopped
+        networks:
+            - spiral-template-network
+        logging:
+            driver: none
+
+    adminer:
+        container_name: spiral-template-adminer
+        image: adminer
+        restart: unless-stopped
+        command: [ "php", "-d", "post_max_size=500M", "-d", "upload_max_filesize=500M", "-S", "0.0.0.0:8080", "-t", "/var/www/html" ]
+        environment:
+            ADMINER_DEFAULT_SERVER: ${ADMINER_DEFAULT_SERVER:-spiral-template-db}
+            ADMINER_USERNAME: root
+            ADMINER_PASSWORD: ${DB_ROOT_PASSWORD}
+        networks:
+            - spiral-template-network
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.adminer.entrypoints=web"
+            - "traefik.http.routers.adminer.rule=Host(`adminer.spiral-template.localhost`)"
+        logging:
+            driver: none
+
+    temporal-db:
+        container_name: spiral-template-temporal-db
+        image: postgres:15
+        restart: unless-stopped
+        volumes:
+            - /var/lib/postgresql/data
+        environment:
+            POSTGRES_USER: ${TEMPORAL_DB_USERNAME}
+            POSTGRES_PASSWORD: ${TEMPORAL_DB_PASSWORD}
+        healthcheck:
+            test: [ 'CMD', 'pg_isready', '-U', '${TEMPORAL_DB_USERNAME:-temporal}', '-d', '${TEMPORAL_DB_DATABASE:-temporal}' ]
+            interval: 3s
+            timeout: 1s
+            start_period: 0s
+            retries: 9
+        networks:
+            - spiral-template-network
+
+    temporal:
+        container_name: spiral-template-temporal
+        environment:
+            DB: postgres12
+            DB_PORT: 5432
+            POSTGRES_USER: ${TEMPORAL_DB_USERNAME}
+            POSTGRES_PWD: ${TEMPORAL_DB_PASSWORD}
+            POSTGRES_SEEDS: temporal-db
+            DYNAMIC_CONFIG_FILE_PATH: config/dynamicconfig/development.yaml
+        image: temporalio/auto-setup:1.25.2
+        ports:
+            - ${TEMPORAL_PORT}:7233
+        volumes:
+            - ./.docker/temporal:/etc/temporal/config/dynamicconfig
+        restart: unless-stopped
+        depends_on:
+            temporal-db:
+                condition: service_healthy
+        networks:
+            - spiral-template-network
+        healthcheck:
+            test: [ 'CMD-SHELL', 'tctl', '--address', '${TEMPORAL_ADDRESS:-spiral-template-temporal:7233}', 'workflow list' ]
+            interval: 1s
+            timeout: 5s
+            start_period: 2s
+            retries: 9
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.temporal.entrypoints=web"
+            - "traefik.http.routers.temporal.rule=Host(`temporal.spiral-template.localhost`)"
+            - "traefik.http.services.temporal.loadbalancer.server.port=7233"
+
+    temporal-ui:
+        container_name: spiral-template-temporal-ui
+        depends_on:
+            temporal:
+                condition: service_started
+        environment:
+            TEMPORAL_ADDRESS: '${TEMPORAL_ADDRESS:-spiral-template-temporal:7233}'
+            TEMPORAL_CORS_ORIGINS: http://localhost:3000
+        image: temporalio/ui
+        restart: unless-stopped
+        networks:
+            - spiral-template-network
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.temporal.entrypoints=web"
+            - "traefik.http.routers.temporal.rule=Host(`temporal-ui.spiral-template.localhost`)"
+            - "traefik.http.services.temporal.loadbalancer.server.port=8080"
+
+    buggregator:
+        container_name: spiral-template-buggregator
+        image: ghcr.io/buggregator/server:latest
+        restart: unless-stopped
+        ports:
+            - "9912:9912"
+            - "9913:9913"
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.buggregator.entrypoints=web"
+            - "traefik.http.routers.buggregator.rule=Host(`buggregator.spiral-template.localhost`)"
+            - "traefik.http.services.buggregator.loadbalancer.server.port=8000"
+        networks:
+            - spiral-template-network
+        logging:
+            driver: none
+    db:
+        image: mariadb:11.0.2
+        restart: always
+        container_name: spiral-template-db
+        command: --innodb-use-native-aio=${INNODB_USE_NATIVE_AIO:-1} --sql_mode=${SQL_MODE:-"ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION"}
+        environment:
+            MYSQL_DATABASE: '${DB_DATABASE}'
+            MYSQL_ROOT_USER: '${DB_ROOT_USER:-root}'
+            MYSQL_ROOT_PASSWORD: '${DB_ROOT_PASSWORD:-root_password}'
+            MYSQL_USER: '${DB_USERNAME}'
+            MYSQL_PASSWORD: '${DB_PASSWORD}'
+        volumes:
+            - ./.docker/volumes/maria-db/data:/var/lib/mysql
+            - ./.docker/volumes/maria-db/dump:/docker-entrypoint-initdb.d
+        ports:
+            - "${DB_PORT}:3306"
+        networks:
+            - spiral-template-network
+
+    phpmyadmin:
+        container_name: spiral-template-db-phpmyadmin
+        image: phpmyadmin:5.2.1-apache
+        restart: always
+        environment:
+            - PMA_USER='${DB_ROOT_USER:-root}'
+            - PMA_PASSWORD='${DB_ROOT_PASSWORD:-root_password}'
+            - PMA_HOST=spiral-template-db
+            - PMA_PORT=3306
+        networks:
+            - spiral-template-network
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.phpmyadmin.entrypoints=web"
+            - "traefik.http.routers.phpmyadmin.rule=Host(`phpmyadmin.spiral-template.localhost`)"
+            - "traefik.http.services.phpmyadmin.loadbalancer.server.port=80"
+        depends_on:
+            - db
+
+networks:
+    spiral-template-network:
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.0.38.0/24
