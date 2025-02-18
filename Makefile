@@ -6,8 +6,17 @@ refresh:
 	rm app/migrations/*.php
 	php app.php app:refresh
 
+dump-prototype:
+	php app.php prototype:dump
 
-#db
+translate:
+	php app.php i18n:index
+
+######
+#
+#  DB
+#
+######
 db-status:
 	php app.php db:list
 
@@ -23,25 +32,18 @@ db-migration-to-db:
 db-migration-rollback:
 	php app.php migrate:rollback
 
+seed:
+	php app.php db:seed
+######
+#
+#  Debug / Tests
+#
+######
 debug:
 	vendor/bin/trap -p1025 -p9912 -p9913 -p8000 --ui=8080
 
-translate:
-	php app.php i18n:index
-
 run-tests:
 	./vendor/bin/phpunit
-
-
-
-dump-prototype:
-	php app.php prototype:dump
-
-
-
-
-seed:
-	php app.php db:seed
 
 ######
 #
@@ -53,7 +55,6 @@ rr-start:
 
 rr-start-build:
 	./rr serve -c .rr.build.yaml
-
 rr-reset:
 	./rr reset
 rr-stop:
